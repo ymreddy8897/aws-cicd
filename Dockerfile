@@ -1,5 +1,5 @@
 # Use latest Java 17 LTS (Eclipse Temurin)
-FROM eclipse-temurin:17-jre
+FROM public.ecr.aws/temurin/temurin:17-jre
 # Set working directory inside the container
 WORKDIR /app
 # Copy the compiled Java application JAR file into the container

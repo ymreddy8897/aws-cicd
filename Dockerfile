@@ -1,10 +1,10 @@
-# Java 17 LTS from Amazon ECR Public
-FROM public.ecr.aws/temurin/temurin:17-jre
-
+# Use latest Java 17 LTS (Eclipse Temurin)
+FROM eclipse-temurin:17-jre
+# Set working directory inside the container
 WORKDIR /app
-
-COPY target/course-service.jar app.jar
-
+# Copy the compiled Java application JAR file into the container
+COPY ./target/course-service.jar /app
+# Expose the port the Spring Boot application will run on
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Command to run the application
+CMD ["java", "-jar", "course-service.jar"]
